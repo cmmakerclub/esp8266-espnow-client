@@ -13,7 +13,7 @@ Ticker readSensorTimer;
 CMMC_Interval updateTimeInterval;
 CMMC_SENSOR_DATA_T sensorData;
 String devicename = "NB-DEVICE-001";
-uint8_t master_mac[6] = { 0x30, 0xAE, 0xA4, 0x99, 0x0C, 0xEC } ;
+uint8_t master_mac[6] = { 0x30, 0xAE, 0xA4, 0x99, 0x0C, 0xFF } ;
 
 
 void setup() {
