@@ -34,7 +34,7 @@ void CMMC_ESPNow::init(int mode) {
     WiFi.mode(WIFI_STA);
   }
 
-  delay(20); 
+  delay(20);
 
   if (esp_now_init() == 0) {
 		USER_DEBUG_PRINTF("espnow init ok");
@@ -70,7 +70,7 @@ void CMMC_ESPNow::send(uint8_t *mac, u8* data, int len, void_cb_t cb, uint32_t w
 
   if (this->_enable_retries) {
     while(this->_message_sent_status != 0) {
-      USER_DEBUG_PRINTF("try to send over espnow..."); 
+      USER_DEBUG_PRINTF("try to send over espnow...");
       esp_now_send(mac, data, len);
       delay(RETRIES_DELAY*(retries+1));
       Serial.printf("retrying %d/%d (at %lums)\r\n", retries, MAX_RETRIES, millis());
@@ -93,11 +93,11 @@ void CMMC_ESPNow::send(uint8_t *mac, u8* data, int len, void_cb_t cb, uint32_t w
       cb();
     }
     else {
-      USER_DEBUG_PRINTF("GOT a message from controller\r\n"); 
+      USER_DEBUG_PRINTF("GOT a message from controller\r\n");
     }
   }
   else {
-    Serial.println("cb is null");
+    // Serial.println("cb is null");
   }
 }
 
